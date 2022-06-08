@@ -8,6 +8,8 @@ body{
 
 #headsx h1{
   font-size: 22px;
+  margin-left: 10px;
+  margin-bottom: 0;
   color: #5f6368;
 }
 
@@ -19,6 +21,17 @@ body{
   border-radius: 30px;
   overflow: hidden;
   width: 20%;
+}
+
+nav{
+  border-bottom: 1px solid #3c4043;
+}
+
+nav li{
+  list-style: none;
+  display: inline;
+  margin-right: 10px;
+  font-weight: 500;
 }
 
 h2{

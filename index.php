@@ -63,6 +63,27 @@ $faqs = [
 ];
 
 
+$students = [
+  [
+      'name' => 'Michele',
+      'lastname' => 'Papagni',
+      'votes' => [8, 5, 7, 6]
+  ],
+  [
+      'name' => 'Fabio',
+      'lastname' => 'Forghieri',
+      'votes' => [10, 2, 4]
+  ],
+  [
+      'name' => 'Roberto',
+      'lastname' => 'Marazzini',
+      'votes' => [2, 8]
+  ]
+];
+ 
+  
+
+
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +93,7 @@ $faqs = [
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.css' integrity='sha512-M9yHeAbo9J8KSZVvOi5PEo4WrL6LWxbS+cvh6faIEPPqHQXhxilgCSJ/L2tTqRf73GmI4+tNy8OWSsQuwXc4fw==' crossorigin='anonymous'/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,30 +102,44 @@ $faqs = [
   <title>FAQ GOOGLE</title>
 </head>
 <body>
+  <!--HEADER-->
   <header class="d-flex justify-content-between flex-row p-3 align-items-center">
+    <!--HEADER SX-->
     <div id="headsx" class="d-flex flex-row align-items-center">
       <img src="img/googlelogo.svg" alt="Logo">
       <h1>Privacy e termini</h1>
     </div>
-
+    <!--HEADER DX-->
     <div id="headx">
       <i class="fa-solid fa-grid"></i>
       <img src="img/user.png" alt="User">
     </div>
 
   </header>
+  <!--NAV-->
+  <nav>
+    <ul class="p-3">
+      <li>Introduzione</li>
+      <li>Norme sulla Privacy</li>
+      <li>Termini di servizio</li>
+      <li>Tecnologie</li>
+      <li>Domande frequenti</li>
+    </ul>
 
+  </nav>
+
+  <!--MAIN-->
   <main class="container">
 
-      <?php for($i = 0; $i < count($faqs); $i++){?>
+      <?php foreach($faqs as $faq):?>
       <div> 
-      <h2><?php echo $faqs[$i]['domanda']?></h2> 
-      <p><?php echo $faqs[$i]['risposta'] ?> </p>
+      <h2><?php echo $faq['domanda']?></h2> 
+      <p><?php echo $faq['risposta'] ?> </p>
       </div>
-      <?php } ?>
+      <?php endforeach ?>
 
   </main>
-
+  
   
 </body>
 </html>
